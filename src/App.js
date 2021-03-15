@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import './App.css';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   BrowserRouter,
   Switch,
@@ -9,6 +9,7 @@ import {
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import AllRecords from './components/AllRecords/AllRecords';
+import RecordsByCategory from './components/RecordsByCategory/RecordsByCategory';
 
 const App = () => (
   <div>
@@ -20,6 +21,9 @@ const App = () => (
         </Route>
         <Route path="/" exact>
           <Home />
+        </Route>
+        <Route path="/category" exact>
+          <RecordsByCategory />
         </Route>
 
       </Switch>

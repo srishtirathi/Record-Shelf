@@ -1,11 +1,15 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { getRecords } from '../../utils/api';
 import Card from '../Card/Card';
 import './AllRecords.css';
+import { groupByCategory } from '../../utils/recordUtil';
+import RecordsByCategory from '../RecordsByCategory/RecordsByCategory';
 
 const AllRecords = () => {
   const [allRecords, setAllRecords] = useState([]);
+  const [recordByCategory, setRecordByCategory] = useState({});
   useEffect(async () => {
     // console.log(await getRecords());
     const orders = await getRecords();
@@ -14,8 +18,12 @@ const AllRecords = () => {
     // console.log('allrecords', allRecords);
   }, []);
   return (
-    <div className="allrecords">
 
+    <div className="allrecords">
+      <div>
+        <Link to="/category"><button type="button" className="category-button">category</button></Link>
+      </div>
+      <br />
       {/*
       {allRecords.map((record) => (<h1>{record.name}</h1>))}
 
