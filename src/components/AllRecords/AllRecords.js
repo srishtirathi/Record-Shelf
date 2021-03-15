@@ -14,7 +14,9 @@ const AllRecords = () => {
     // console.log(await getRecords());
     const orders = await getRecords();
     // console.log('orders', orders);
+    const categoryData = groupByCategory(orders);
     setAllRecords(orders);
+    setRecordByCategory(categoryData);
     // console.log('allrecords', allRecords);
   }, []);
   return (
