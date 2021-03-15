@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable no-unused-vars */
 /* eslint-disable array-callback-return */
 /* eslint-disable react/prop-types */
@@ -11,12 +12,14 @@ const RecordsByCategory = ({
 }) => (
   <div className="app-container">
     <div>
-      <Link to="/allrecords"><button type="button" className="category-button">All Songs</button></Link>
+      <Link to="/allrecords"><button type="button" className="category-button" /></Link>
     </div>
 
     {Object.keys(recordByCategory).map((genre) => (
       <div>
+
         {' '}
+
         <h1>{genre}</h1>
         <div className="inventory-container">
           {recordByCategory[genre].map((record) => (
@@ -39,6 +42,7 @@ const RecordsByCategory = ({
         </div>
       </div>
     ))}
+
   </div>
 );
 export default RecordsByCategory;

@@ -1,7 +1,34 @@
-.allrecords {
+.app-container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     text-align: center;
     flex-wrap: wrap;
+}
+
+.inventory-container:nth-child(2n+1) {
+    background: grey;
+}
+
+.allcategory-button {
+    background: url(/src/assets/icon-genre.svg) no-repeat;
+    cursor: pointer;
+    border: none;
+    padding: 2rem
+}
+
+.inventory-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+@media screen and (max-width: 27rem) {
+    .container {
+        flex-direction: column;
+        justify-content: center;
+    }
 }

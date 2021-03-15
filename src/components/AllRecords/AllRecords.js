@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
@@ -12,12 +13,14 @@ const AllRecords = ({
   allRecords, increaseCount, decreaseCount, updateLike,
 }) => (
 
-  <div className="allrecords">
+  <div>
     <div>
-      <Link to="/category"><button type="button" className="category-button">category</button></Link>
+      <Link to="/category"><button type="button" className="allcategory-button" /></Link>
     </div>
     <br />
-    {/*
+    <h1>all songs</h1>
+    <div className="app-container">
+      {/*
       {allRecords.map((record) => (<h1>{record.name}</h1>))}
 
       {
@@ -28,22 +31,25 @@ const AllRecords = ({
           </div>
         ))
       } */}
-    {/* {allRecords.map((record) => (<Card record={record} />))} */}
-    {allRecords.map((record) => (
-      <div>
-        <Card
-          name={record.name}
-          artist={record.artist.name}
-          albumArtUrl={record.albumArtUrl}
-          count={record.count}
-          like={record.like}
-          increaseCount={increaseCount}
-          record={record}
-          decreaseCount={decreaseCount}
-          updateLike={updateLike}
-        />
-      </div>
-    ))}
+
+      {/* {allRecords.map((record) => (<Card record={record} />))} */}
+
+      {allRecords.map((record) => (
+        <div className="inventory-container">
+          <Card
+            name={record.name}
+            artist={record.artist.name}
+            albumArtUrl={record.albumArtUrl}
+            count={record.count}
+            like={record.like}
+            increaseCount={increaseCount}
+            record={record}
+            decreaseCount={decreaseCount}
+            updateLike={updateLike}
+          />
+        </div>
+      ))}
+    </div>
   </div>
 );
 export default AllRecords;
