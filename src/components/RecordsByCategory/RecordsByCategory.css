@@ -15,15 +15,15 @@
     padding: 2rem;
 }
 
-.category-button-category {
-    background: url(/src/assets/icon-grid.svg) no-repeat;
+.button-rock {
+    background: url(/src/assets/rock.png) no-repeat;
     cursor: pointer;
     border: none;
     padding: 2rem
 }
 
-.genre-button-category {
-    background: url(/src/assets/genre-bollywood.png) no-repeat;
+.category-button-category {
+    background: url(/src/assets/icon-grid.svg) no-repeat;
     cursor: pointer;
     border: none;
     padding: 2rem
