@@ -7,11 +7,17 @@ import {
   Route,
 } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
+import Home from './components/Home/Home';
 
 const App = () => (
   <div>
     <BrowserRouter>
       <Navbar />
+      <Switch>
+        <Route>
+          <Home path="/" exact />
+        </Route>
+      </Switch>
     </BrowserRouter>
   </div>
 );
