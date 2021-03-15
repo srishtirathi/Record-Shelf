@@ -14,3 +14,19 @@ export const getRecords = async () => {
   const records = data.data;
   return records;
 };
+
+export const getRecordWithLikes = async () => {
+  const { data } = await axios.get('/records', { headers: { Authorization: `Bearer ${token}` } });
+  const records = data.data;
+  const finalRes = [];
+  records.forEach(async (record) => {
+    const { id } = record;
+    let like = await axios.get(`/records/${id}/likes`, { headers: { Authorization: `Bearer ${token}` } });
+    like = like.data.data;
+    const newRecord = { ...record, ...like };
+
+    finalRes.push(newRecord);
+  });
+  console.log(finalRes);
+  return finalRes;
+};

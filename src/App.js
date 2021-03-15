@@ -10,20 +10,23 @@ import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import AllRecords from './components/AllRecords/AllRecords';
 import RecordsByCategory from './components/RecordsByCategory/RecordsByCategory';
-import { getRecords } from './utils/api';
+import { getRecords, getRecordWithLikes } from './utils/api';
 import { groupByCategory } from './utils/recordUtil';
 
 const App = () => {
   const [allRecords, setAllRecords] = useState([]);
+  const [allRecordsWithLikes, setAllRecordsWithLikes] = useState([]);
   const [recordByCategory, setRecordByCategory] = useState({});
   useEffect(async () => {
     // console.log(await getRecords());
     const orders = await getRecords();
     // console.log('orders', orders);
-
+    const recordsWithLikes = await getRecordWithLikes();
     const categoryData = groupByCategory(orders);
+
     setAllRecords(orders);
     setRecordByCategory(categoryData);
+    setAllRecordsWithLikes(recordsWithLikes);
     // console.log('allrecords', allRecords);
   }, []);
   return (
@@ -32,7 +35,7 @@ const App = () => {
         <Navbar />
         <Switch>
           <Route path="/allrecords">
-            <AllRecords allRecords={allRecords} />
+            <AllRecords allRecords={allRecordsWithLikes} />
           </Route>
           <Route path="/" exact>
             <Home />
