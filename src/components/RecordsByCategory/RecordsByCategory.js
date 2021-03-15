@@ -5,7 +5,7 @@ import React from 'react';
 import Card from '../Card/Card';
 import './RecordsByCategory.css';
 
-const RecordsByCategory = ({ recordByCategory }) => (
+const RecordsByCategory = ({ recordByCategory, increaseCount, decreaseCount }) => (
   <div className="app-container">
 
     {Object.keys(recordByCategory).map((genre) => (
@@ -21,6 +21,10 @@ const RecordsByCategory = ({ recordByCategory }) => (
                 artist={record.artist.name}
                 albumArtUrl={record.albumArtUrl}
                 count={record.count}
+                like={record.like}
+                increaseCount={increaseCount}
+                record={record}
+                decreaseCount={decreaseCount}
               />
             </div>
           ))}

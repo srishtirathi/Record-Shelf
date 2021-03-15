@@ -74,7 +74,11 @@ const App = () => {
             <Home />
           </Route>
           <Route path="/category" exact>
-            <RecordsByCategory recordByCategory={recordByCategory} />
+            <RecordsByCategory
+              recordByCategory={recordByCategory}
+              increaseCount={increaseCount}
+              decreaseCount={decreaseCount}
+            />
           </Route>
 
         </Switch>
