@@ -49,7 +49,7 @@ describe('Api test', () => {
       jest.spyOn(axios, 'get').mockResolvedValueOnce(mockDataLikes).mockResolvedValueOnce(mockDataLikes);
       const response = await getRecordLikes();
       console.log(response);
-      expect(response).toEqual(mockManipulatedData);
+      expect(response).toEqual([{ count: 1, like: true }]);
     });
   });
 });
