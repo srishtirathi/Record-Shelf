@@ -13,11 +13,10 @@ const Card = ({
       <img data-testid="record-img" src={albumArtUrl} className="song-img" alt="songImg" />
       <div className="record-container">
         <p>
-
+          {' '}
           {name}
         </p>
         <p>
-
           {artist}
         </p>
         <p>
