@@ -8,7 +8,9 @@ import './AllRecords.css';
 import { groupByCategory } from '../../utils/recordUtil';
 import RecordsByCategory from '../RecordsByCategory/RecordsByCategory';
 
-const AllRecords = ({ allRecords, increaseCount, decreaseCount }) => (
+const AllRecords = ({
+  allRecords, increaseCount, decreaseCount, updateLike,
+}) => (
 
   <div className="allrecords">
     <div>
@@ -38,6 +40,7 @@ const AllRecords = ({ allRecords, increaseCount, decreaseCount }) => (
           increaseCount={increaseCount}
           record={record}
           decreaseCount={decreaseCount}
+          updateLike={updateLike}
         />
       </div>
     ))}

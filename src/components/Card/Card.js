@@ -4,10 +4,9 @@ import './Card.css';
 import Heart from 'react-animated-heart';
 
 const Card = ({
-  name, artist, albumArtUrl, count, like, increaseCount, record, decreaseCount,
+  name, artist, albumArtUrl, count, like, increaseCount, record, decreaseCount, updateLike,
 }) => {
   const [isClick, setClick] = useState(like);
-  console.log('like', like);
   return (
     <div className="record-card" data-testid="card">
 
@@ -32,6 +31,7 @@ const Card = ({
               setClick(!isClick);
               increaseCount(record);
               decreaseCount(record);
+              updateLike(record.id, like);
             }}
           />
         </div>

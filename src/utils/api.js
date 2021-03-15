@@ -30,3 +30,9 @@ export const getRecordWithLikes = async () => {
   console.log(finalRes);
   return finalRes;
 };
+
+export const updateLike = async (id, like) => {
+  const { data } = await axios.patch(`/records/${id}/likes`, { like }, { headers: { Authorization: `Bearer ${token}` } });
+  const records = data.data;
+  return records;
+};

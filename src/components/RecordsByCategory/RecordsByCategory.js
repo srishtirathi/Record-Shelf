@@ -2,11 +2,17 @@
 /* eslint-disable array-callback-return */
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Card from '../Card/Card';
 import './RecordsByCategory.css';
 
-const RecordsByCategory = ({ recordByCategory, increaseCount, decreaseCount }) => (
+const RecordsByCategory = ({
+  recordByCategory, increaseCount, decreaseCount, updateLike,
+}) => (
   <div className="app-container">
+    <div>
+      <Link to="/allrecords"><button type="button" className="category-button">All Songs</button></Link>
+    </div>
 
     {Object.keys(recordByCategory).map((genre) => (
       <div>
@@ -25,6 +31,7 @@ const RecordsByCategory = ({ recordByCategory, increaseCount, decreaseCount }) =
                 increaseCount={increaseCount}
                 record={record}
                 decreaseCount={decreaseCount}
+                updateLike={updateLike}
               />
             </div>
           ))}

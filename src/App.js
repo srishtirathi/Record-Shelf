@@ -10,7 +10,7 @@ import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import AllRecords from './components/AllRecords/AllRecords';
 import RecordsByCategory from './components/RecordsByCategory/RecordsByCategory';
-import { getRecords, getRecordWithLikes } from './utils/api';
+import { getRecords, getRecordWithLikes, updateLike } from './utils/api';
 import { groupByCategory } from './utils/recordUtil';
 
 const App = () => {
@@ -68,6 +68,7 @@ const App = () => {
               allRecords={allRecordsWithLikes}
               increaseCount={increaseCount}
               decreaseCount={decreaseCount}
+              updateLike={updateLike}
             />
           </Route>
           <Route path="/" exact>
@@ -78,6 +79,7 @@ const App = () => {
               recordByCategory={recordByCategory}
               increaseCount={increaseCount}
               decreaseCount={decreaseCount}
+              updateLike={updateLike}
             />
           </Route>
 
