@@ -29,13 +29,46 @@ const App = () => {
     setAllRecordsWithLikes(recordsWithLikes);
     // console.log('allrecords', allRecords);
   }, []);
+
+  const increaseCount = (item) => {
+    if (item.like) return;
+
+    const updatedProducts = allRecordsWithLikes.map((product) => (product.id === item.id ? {
+      ...product,
+      count: product.count + 1,
+      like: true,
+    } : product));
+
+    const updatedGroupedProducts = groupByCategory(updatedProducts);
+
+    setAllRecordsWithLikes(updatedProducts);
+    setRecordByCategory(updatedGroupedProducts);
+  };
+  const decreaseCount = (item) => {
+    if (!item.like) return;
+
+    const updatedProducts = allRecordsWithLikes.map((product) => (product.id === item.id ? {
+      ...product,
+      count: product.count - 1,
+      like: false,
+    } : product));
+
+    const updatedGroupedProducts = groupByCategory(updatedProducts);
+
+    setAllRecordsWithLikes(updatedProducts);
+    setRecordByCategory(updatedGroupedProducts);
+  };
   return (
     <div>
       <BrowserRouter>
         <Navbar />
         <Switch>
           <Route path="/allrecords">
-            <AllRecords allRecords={allRecordsWithLikes} />
+            <AllRecords
+              allRecords={allRecordsWithLikes}
+              increaseCount={increaseCount}
+              decreaseCount={decreaseCount}
+            />
           </Route>
           <Route path="/" exact>
             <Home />

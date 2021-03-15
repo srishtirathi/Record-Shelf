@@ -8,7 +8,7 @@ import './AllRecords.css';
 import { groupByCategory } from '../../utils/recordUtil';
 import RecordsByCategory from '../RecordsByCategory/RecordsByCategory';
 
-const AllRecords = ({ allRecords }) => (
+const AllRecords = ({ allRecords, increaseCount, decreaseCount }) => (
 
   <div className="allrecords">
     <div>
@@ -29,7 +29,16 @@ const AllRecords = ({ allRecords }) => (
     {/* {allRecords.map((record) => (<Card record={record} />))} */}
     {allRecords.map((record) => (
       <div>
-        <Card name={record.name} artist={record.artist.name} albumArtUrl={record.albumArtUrl} />
+        <Card
+          name={record.name}
+          artist={record.artist.name}
+          albumArtUrl={record.albumArtUrl}
+          count={record.count}
+          like={record.like}
+          increaseCount={increaseCount}
+          record={record}
+          decreaseCount={decreaseCount}
+        />
       </div>
     ))}
   </div>

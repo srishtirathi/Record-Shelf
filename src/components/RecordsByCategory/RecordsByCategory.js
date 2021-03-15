@@ -20,6 +20,7 @@ const RecordsByCategory = ({ recordByCategory }) => (
                 name={record.name}
                 artist={record.artist.name}
                 albumArtUrl={record.albumArtUrl}
+                count={record.count}
               />
             </div>
           ))}
