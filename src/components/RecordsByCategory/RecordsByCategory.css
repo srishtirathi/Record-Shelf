@@ -1,4 +1,4 @@
-.app-container {
+.app-container-category {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -6,7 +6,7 @@
     flex-wrap: wrap;
 }
 
-.inventory-container {
+.inventory-container-category {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -15,14 +15,14 @@
     padding: 2rem;
 }
 
-.category-button {
+.category-button-category {
     background: url(/src/assets/icon-grid.svg) no-repeat;
     cursor: pointer;
     border: none;
     padding: 2rem
 }
 
-.genre-button {
+.genre-button-category {
     background: url(/src/assets/genre-bollywood.png) no-repeat;
     cursor: pointer;
     border: none;

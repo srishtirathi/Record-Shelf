@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable no-unused-vars */
 /* eslint-disable array-callback-return */
@@ -10,9 +11,9 @@ import './RecordsByCategory.css';
 const RecordsByCategory = ({
   recordByCategory, increaseCount, decreaseCount, updateLike,
 }) => (
-  <div className="app-container">
+  <div className="app-container-category">
     <div>
-      <Link to="/allrecords"><button type="button" className="category-button" /></Link>
+      <Link to="/allrecords"><button type="button" className="category-button-category" /></Link>
     </div>
 
     {Object.keys(recordByCategory).map((genre) => (
@@ -21,7 +22,8 @@ const RecordsByCategory = ({
         {' '}
 
         <h1>{genre}</h1>
-        <div className="inventory-container">
+
+        <div className="inventory-container-category">
           {recordByCategory[genre].map((record) => (
             <div>
 
