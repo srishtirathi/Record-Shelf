@@ -1,13 +1,10 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+
 import { Link } from 'react-router-dom';
-import { getRecords } from '../../utils/api';
 import Card from '../Card/Card';
 import './AllRecords.css';
-import { groupByCategory } from '../../utils/recordUtil';
-import RecordsByCategory from '../RecordsByCategory/RecordsByCategory';
 
 const AllRecords = ({
   allRecords, increaseCount, decreaseCount, updateLike,
@@ -52,4 +49,16 @@ const AllRecords = ({
     </div>
   </div>
 );
+
+// AllRecords.propTypes = {
+
+//   increaseCount: PropTypes.func.isRequired,
+//   decreaseCount: PropTypes.func.isRequired,
+//   updateLike: PropTypes.func.isRequired,
+
+//   allRecords: PropTypes.shape({
+//
+//   }).isRequired,
+// };
+
 export default AllRecords;

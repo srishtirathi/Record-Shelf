@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import {
@@ -23,7 +22,7 @@ const App = () => {
     // console.log('orders', orders);
     const recordsWithLikes = await getRecordWithLikes();
     const categoryData = groupByCategory(orders);
-
+    console.log(allRecords);
     setAllRecords(orders);
     setRecordByCategory(categoryData);
     setAllRecordsWithLikes(recordsWithLikes);
