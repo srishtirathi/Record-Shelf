@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AllRecords should match snapshot 1`] = `
+<div>
+  <div
+    class="allrecords"
+  >
+    <div>
+      <a
+        href="/category"
+      >
+        <button
+          class="category-button"
+          type="button"
+        >
+          category
+        </button>
+      </a>
+    </div>
+    <br />
+    <div>
+      <div
+        class="record-card"
+        data-testid="card"
+      >
+        <img
+          alt="songImg"
+          class="song-img"
+          data-testid="record-img"
+          src="https://i.scdn.co/image/ab67616d0000b273dc1f496d2a8d75f7fda092b6"
+        />
+        <div
+          class="record-container"
+        >
+          <p>
+            Aankh Marey (From "Simmba")
+          </p>
+          <p>
+            Neha Kakkar
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

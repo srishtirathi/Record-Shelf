@@ -5,11 +5,7 @@ const Navbar = () => (
   <div>
     <nav>
       <h1>
-        My
-        {' '}
-        <b>Record</b>
-        {' '}
-        Shelf
+        My Record Shelf
       </h1>
     </nav>
   </div>
