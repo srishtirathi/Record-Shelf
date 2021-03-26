@@ -3,7 +3,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './RecordsByCategory.module.css';
+
 import Card from '../Card/Card';
 import './RecordsByCategory.css';
 
@@ -19,7 +19,7 @@ const RecordsByCategory = ({
       <div>
 
         {' '}
-        {console.log(`./${genre}.png`)}
+        {/* {console.log(`./${genre}.png`)} */}
         <img src={`../../assets/${genre}.png`} alt="genre" />
         <h1>{genre}</h1>
 

@@ -16,7 +16,7 @@
 }
 
 .button-rock {
-    background: url(/src/assets/rock.png) no-repeat;
+    background: url(/src/assets/Rock.png) no-repeat;
     cursor: pointer;
     border: none;
     padding: 2rem
